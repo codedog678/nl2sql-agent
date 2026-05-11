@@ -23,9 +23,6 @@ wheels/
 .env
 .env.local
 
-# Config with secrets
-conf/app_config.yaml
-
 # Logs
 *.log
 logs/
