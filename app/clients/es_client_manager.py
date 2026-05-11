@@ -1,0 +1,21 @@
+from elasticsearch import AsyncElasticsearch
+from app.conf.app_config import ESConfig, app_config
+
+class ESClientManager:
+    def __init__(self,es_config:ESConfig):
+        self.client:AsyncElasticsearch  = None
+        self.es_config=es_config
+
+
+    def _get_url(self):
+        return f"http://{self.es_config.host}:{self.es_config.port}"
+
+    def init(self):
+        self.client = AsyncElasticsearch(hosts=[self._get_url()])
+
+    async def close(self):
+        await self.client.close()
+
+es_client_manager=ESClientManager(app_config.es)
+
+        

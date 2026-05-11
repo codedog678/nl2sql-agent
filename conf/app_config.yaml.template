@@ -1,0 +1,49 @@
+logging:
+  file:
+    enable: true
+    level: INFO
+    path: logs
+    rotation: "10 MB"
+    retention: "7 days"
+  console:
+    enable: true
+    level: INFO
+
+db_meta:
+  host: ${DB_META_HOST}
+  port: ${DB_META_PORT}
+  user: ${DB_META_USER}
+  password: ${DB_META_PASSWORD}
+  database: ${DB_META_DATABASE}
+
+db_dw:
+  host: ${DB_DW_HOST}
+  port: ${DB_DW_PORT}
+  user: ${DB_DW_USER}
+  password: ${DB_DW_PASSWORD}
+  database: ${DB_DW_DATABASE}
+
+qdrant:
+  host: ${QDRANT_HOST}
+  port: ${QDRANT_PORT}
+  embedding_size: ${QDRANT_EMBEDDING_SIZE}
+
+embedding:
+  base_url: ${EMBEDDING_BASE_URL}
+  api_key: ${EMBEDDING_API_KEY}
+  model: ${EMBEDDING_MODEL}
+
+es:
+  host: ${ES_HOST}
+  port: ${ES_PORT}
+  index_name: ${ES_INDEX_NAME}
+
+llm_coder:
+  model_name: ${LLM_CODER_MODEL_NAME}
+  api_key: ${LLM_CODER_API_KEY}
+  base_url: ${LLM_CODER_BASE_URL}
+
+llm_text:
+  model_name: ${LLM_TEXT_MODEL_NAME}
+  api_key: ${LLM_TEXT_API_KEY}
+  base_url: ${LLM_TEXT_BASE_URL}
